@@ -13,3 +13,13 @@ The EMS aims to produce a convenient and efficient platform that automates the e
 * Report Card Generation
 * Report Card Distribution
 * Statistical Reports and Visualization
+
+## Stack Frameworks
+<h3 align="center">FEVN-Firestore + Express + Vue + Node</h3>
+
+<p align="center">
+    <a href="https://firebase.google.com/"><img width="80" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu5ZDlfzcy8qDw6CU_keHSSEgbkGJVwq0HTA&usqp=CAU" alt="Firebase Logo"></a>
+    <a href="https://expressjs.com/"><img width="80" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169185.png" alt="Express JS Logo"></a>
+    <a href="https://vuejs.org/"><img width="80" src="https://vuejs.org/images/logo.png" alt="Vue JS Logo"></a>
+    <a href="https://nodejs.org/en/"><img width="80" src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="Node JS Logo"></a>
+</p>
