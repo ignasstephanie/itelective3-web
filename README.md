@@ -28,4 +28,4 @@ The EMS aims to produce a `convenient` and `efficient` platform that automates t
 </br>
 
 ***
-<h6 align="center">2022©️ ignasstephanie | itelective3-web</h6>
+<p align="center">2022 ©️ ignasstephanie | itelective3-web</p>
