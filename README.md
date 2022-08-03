@@ -6,7 +6,7 @@
 # Exam Management System ℹ️
 With the large scale implementation of digital transformation tools, this system is deviced to **effectively manage, automate, and streamline planning and execution of the entire examination process** of the *Electronics and Communications Engineering Department* under the *Ateneo de Davao University - School of Engineering and Architecture*. This is a system which covers all the activities that are related to examination management — from receiving examination papers, to the processing of exams score, printing, distribution, and statistical reports.
 
-The EMS aims to produce a convenient and efficient platform that automates the examination process to facilitate student assessments, take time off the faculty, and improve communication and transparency between faculty, students, and the adminstrator.  This automation system is also designed to properly **manage access permissions for different users** in order to prevent misuse and mismanagement of official data not only examination-related information but personal data as well. 
+The EMS aims to produce a `convenient` and `efficient` platform that automates the examination process to facilitate student assessments, take time off the faculty, and improve communication and transparency between `faculty`, `students`, and the `adminstrator`.  This automation system is also designed to properly **manage access permissions for different users** in order to prevent misuse and mismanagement of official data not only examination-related information but personal data as well. 
 
 ## ⚙ Subsystems
 * ✍🏻 Exam Scores Management 
@@ -25,4 +25,4 @@ The EMS aims to produce a convenient and efficient platform that automates the e
     <a href="https://nodejs.org/en/"><img width="80" src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="Node JS Logo"></a>
 </p>
 
-</br><h6 align="center">2022 ©️ ignasstephanie | itelective3-web</h6> 
+</br><h6 align="center">2022©️ ignasstephanie | itelective3-web</h6>
