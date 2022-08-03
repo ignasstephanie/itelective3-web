@@ -9,11 +9,11 @@ With the large scale implementation of digital transformation tools, this system
 The EMS aims to produce a `convenient` and `efficient` platform that automates the examination process to facilitate student assessments, take time off the faculty, and improve communication and transparency between `faculty`, `students`, and the `adminstrator`.  This automation system is also designed to properly **manage access permissions for different users** in order to prevent misuse and mismanagement of official data not only examination-related information but personal data as well. 
 
 ## ⚙ Subsystems
-* ✍🏻 Exam Scores Management 
-* 🗃️ Grades Record Management
-* 🖨️ Report Card Generation
-* 📇 Report Card Distribution
-* 📊 Statistical Reports and Visualization
+* Exam Scores Management 
+* Grades Record Management
+* Report Card Generation
+* Report Card Distribution
+* Statistical Reports and Visualization
 
 ## 💻 Stack Frameworks 
 <h3 align="center">FEVN-Firestore + Express + Vue + Node</h3>
@@ -25,4 +25,7 @@ The EMS aims to produce a `convenient` and `efficient` platform that automates t
     <a href="https://nodejs.org/en/"><img width="80" src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="Node JS Logo"></a>
 </p>
 
-</br><h6 align="center">2022©️ ignasstephanie | itelective3-web</h6>
+</br>
+
+***
+<h6 align="center">2022©️ ignasstephanie | itelective3-web</h6>
