@@ -39,6 +39,7 @@
     <div class="flex items-center justify-center mt-12">
         <div class="column">
             <img src="https://cdn-icons-png.flaticon.com/512/197/197561.png" class="mr-3 h-6 sm:h-48" alt="Country Flag" />
+            <!-- <img src="<%= weather[0]["location"]["imagerelativeurl"] %>" class="mr-3 h-6 sm:h-48" alt="Country Flag" /> -->
         </div>
         <div class="flex flex-col px-4">
             <h3 class="text-5xl font-semibold">
@@ -50,5 +51,44 @@
             </p>
         </div>
     </div>
+    <div class="flex items-center justify-center mt-12 gap-12">
+        <!-- Current Date -->
+        <div class="flex flex-col items-center justify-center">
+                <!-- <img src="" class="mr-3 h-6 sm:h-20" alt="Weather Icon" /> -->
+            <div>
+                <p class="text-3xl font-bold text-center mt-2">Today</p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["current"]["date"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["current"]["temperature"] %>° C</p>   
+            </div>  
+        </div>   
+        <!-- Forecast -->
+            <div class="flex flex-col">
+                <p class="text-3xl font-bold text-center mt-2"><%= weather[1]["forecast"][1]["day"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][1]["date"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][1]["skycodeday"] %>° C</p>   
+            </div>  
+            <div class="flex flex-col">
+                <p class="text-3xl font-bold text-center mt-2"><%= weather[1]["forecast"][2]["day"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][2]["date"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][2]["skycodeday"] %>° C</p>   
+            </div>  
+            <div class="flex flex-col">
+                <p class="text-3xl font-bold text-center mt-2"><%= weather[1]["forecast"][3]["day"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][3]["date"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][3]["skycodeday"] %>° C</p>   
+            </div>  
+            <div class="flex flex-col">
+                <p class="text-3xl font-bold text-center mt-2"><%= weather[1]["forecast"][4]["day"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][4]["date"] %></p>
+                <p class="text-3xl text-center mt-2"><%= weather[1]["forecast"][4]["skycodeday"] %>° C</p>   
+            </div>  
+        </div>
+    </div>
 </body>
 </html>
+
+<script>
+    var weatherdata = '';
+    
+    document.getElementById("forecast").innerHTML = weatherdata;
+    </script>

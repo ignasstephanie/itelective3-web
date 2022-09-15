@@ -7,7 +7,7 @@ var weather = require('weather-js');
 app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
 
-    weather.find({ search: 'Davao, Ph', degreeType: 'C' }, function (err, result) {
+    weather.find({ search: 'Davao, PH', degreeType: 'C' }, function (err, result) {
         var weather_data = null;
         if (err) console.log(err);
         else {
