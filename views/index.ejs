@@ -8,43 +8,72 @@
         <%- include('./partials/navigation')  %> 
         
         <!-- Location, Longitude, and Latitude -->
-        <div class="flex items-center justify-center mt-12">
+        <div class="flex items-center justify-center mt-24 bg-blue-100 rounded-3xl w-2/5 m-auto text-center rounded-3xl py-12">
             <div class="column">
-                <img src="https://cdn-icons-png.flaticon.com/512/197/197561.png" class="mr-3 h-6 sm:h-48" alt="Country Flag" />
-                
-            </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/203/203027.png" class="sm:h-32 mr-5" alt="Country Flag" /> <!-- Location Flag -->
+            </div>   
             <div class="flex flex-col px-4">
-                <h3 class="text-5xl font-semibold">
-                    <%= weather[0]["location"]["name"] %>
+                <h3 class="text-4xl font-bold text-sky-900">
+                    <%= weather[0]["location"]["name"] %> <!-- Location -->
                 </h3>
-                <p class="text-3xl mt-2">
-                    <%= weather[0]["location"]["lat"] %>° N, 
-                    <%= weather[0]["location"]["long"] %>° E
+                <p class="text-3xl mt-2 text-sky-900">
+                    <%= weather[0]["location"]["lat"] %>° N, <!-- Latitude -->
+                    <%= weather[0]["location"]["long"] %>° E <!-- Longitude -->
                 </p>
             </div>
         </div>
-        <div class="flex items-center justify-center mt-12 gap-12">
-            <!-- Current Date -->
-            <div class="flex flex-col">
-                    <!-- <img src="" class="mr-3 h-6 sm:h-20" alt="Weather Icon" /> -->
-                <div>
-                    <p class="text-3xl font-bold text-center mt-2">Today</p>
-                    <p class="text-3xl text-center mt-2"><%= weather[0]["current"]["date"] %></p>
-                    <p class="text-3xl text-center mt-2"><%= weather[0]["current"]["temperature"] %>° C</p>   
-                </div>  
-            </div>
-            <!-- Forecast -->
-                <% for(let i = 1; i <= 4; i++){%> 
-                    <div class="flex flex-col">
-                        <div class="text-3xl font-bold text-center mt-2"><%= weather[0].forecast[i].day %></div>
-                        <div class="text-3xl text-center mt-2"><%= weather[0].forecast[i].date %></div>
-                        <div class="text-3xl text-center mt-2"><%= weather[0].forecast[i].skycodeday %>° C</div>
-                    </div>
-                <% } %>   
-            </div>
+        <div class="flex items-center justify-center mx-auto mt-16 gap-20">
+        <!-- Weather Forecast -->
+            <% for(let i = 0; i <= 4; i++){ %> 
+                <!-- Weather Icon -->
+                <div class="weathericon flex flex-col">
+                    <% if (weather[0].forecast[i].skytextday  == "Clear"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/8030/8030067.png" alt="partly-sunny" /> 
+                    <% } if (weather[0].forecast[i].skytextday  == "Sunny"){ %>
+                            <img src="https://cdn-icons-png.flaticon.com/512/3222/3222675.png" alt="partly-sunny" />    
+                    <% } if (weather[0].forecast[i].skytextday  == "Partly Sunny"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/5034/5034667.png" alt="partly-sunny" />    
+                    <% } if (weather[0].forecast[i].skytextday  == "Mostly Sunny"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/1888/1888282.png" alt="partly-sunny" />    
+                    <% } if (weather[0].forecast[i].skytextday  == "Cloudy"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/990/990462.png" alt="partly-sunny" />    
+                    <% } if (weather[0].forecast[i].skytextday  == "Partly Cloudy"){ %>
+                        <img src=https://cdn-icons-png.flaticon.com/512/1888/1888282.png" alt="partly-sunny" />    
+                    <% } if (weather[0].forecast[i].skytextday  == "Mostly Cloudy"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/5034/5034667.png" alt="mostly-cloudy" />    
+                    <% } if(weather[0].forecast[i].skytextday  == "Rain"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/3520/3520675.png" alt="rain" />   
+                    <% } if(weather[0].forecast[i].skytextday  == "Rain Showers"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/3313/3313966.png" alt="rain" />    
+                    <% } if(weather[0].forecast[i].skytextday  == "T-Storms"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/5903/5903459.png" alt="t-storms" />    
+                    <% } if(weather[0].forecast[i].skytextday  == "Heavy T-Storms"){ %>
+                        <img src="https://cdn-icons-png.flaticon.com/512/7774/7774380.png" alt="heavy-t-storms" />    
+                    <% } %>
+                    <!-- Day -->
+                    <div class="text-2xl font-bold text-center mt-3">
+                        <% if(weather[0]["current"]["date"]  != weather[0].forecast[i].date ){ %>
+                            <%= weather[0].forecast[i].day %>
+                        <% } %>
+                        <% if(weather[0]["current"]["date"] == weather[0].forecast[i].date){ %>
+                            Today
+                        <% } %>
+                    </div>  
+                    <div class="text-2xl text-center mt-1"><%= weather[0].forecast[i].date %></div> <!-- Date -->
+                    <div class="text-2xl text-center mt-1"><%= weather[0].forecast[i].skycodeday %>° C</div> <!-- Temperature -->
+                </div>
+            <% } %>   
         </div>
     </div>
-    <%- include('./partials/footer')  %> 
+    
 </body>
+<%- include('./partials/footer')  %> 
 </html>
 
+<style>
+    .weathericon img{
+        width: 120px; 
+        height: 120px;
+        align-self: center; 
+    }
+</style>
