@@ -28,7 +28,7 @@
                 <%= random["meals"][0]["strArea"] %> <!--Area-->
             </p> 
             <p class="font-bold text-gray-700 dark:text-gray-400"> Ingredients </p>
-                <ul class="mb-2 list-disc columns-2s gap-1 font-normal text-gray-700 dark:text-gray-400 ml-6">
+                <ul class="mb-2 list-disc columns-2 gap-1 font-normal text-gray-700 dark:text-gray-400 ml-6">
                     <% for(let i = 1; i <= 20; i++){ %> <!--Ingredients Loop-->
                         <%  if(random["meals"][0]["strIngredient" + i] != "" && random["meals"][0]["strMeasure" + i] != "" && 
                             random["meals"][0]["strIngredient" + i] != "null" && random["meals"][0]["strMeasure" + i] != "null"){ %> 
