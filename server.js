@@ -22,9 +22,7 @@ app.get('/other', async function (req, res) {
     fetchUrl("https://www.themealdb.com/api/json/v1/1/random.php", function(error, meta, body){
         try {
             console.log(body.toString());
-            // var meals_data = body;
             var meals_data = JSON.parse(body.toString());
-            // console.log();
         } catch (err) {
             console.log(err)
         }
