@@ -1,0 +1,67 @@
+
+<footer class="bg-sky-900 shadow md:flex md:items-center md:justify-between md:p-6 p-2 sm:px-4 py-2.5 dark:bg-gray-900">
+    <span class="text-md text-white sm:text-center dark:text-gray-400">© 2022 Appmosphere</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-md text-white dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline">Contact</a>
+        </li>
+    </ul>
+</footer>
+
+<style>
+    footer {
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        height: 60px;
+        width:100%;
+    }
+
+</style>
+<script>
+// set the target element that will be collapsed or expanded (eg. navbar menu)
+const targetEl = document.getElementById('targetEl');
+
+// optionally set a trigger element (eg. a button, hamburger icon)
+const triggerEl = document.getElementById('triggerEl');
+
+// optional options with default values and callback functions
+const options = {
+    triggerEl: triggerEl,
+    onCollapse: () => {
+        console.log('element has been collapsed')
+    },
+    onExpand: () => {
+        console.log('element has been expanded')
+    },
+    onToggle: () => {
+        console.log('element has been toggled')
+    }
+};
+
+/*
+* targetEl: required
+* options: optional
+*/
+const collapse = new Collapse(targetEl, options);
+
+// show the target element
+collapse.expand();
+
+// hide the target element
+collapse.collapse();
+
+// toggle the visibility of the target element
+collapse.toggle();
+
+</script>

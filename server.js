@@ -3,7 +3,8 @@ var express = require('express');
 var app = express();
 
 var weather = require('weather-js');
-var fetchUrl = require('fetch').fetchUrl;
+var fetchUrl = require("fetch").fetchUrl;
+
 app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
 
@@ -14,14 +15,18 @@ app.get('/', function (req, res) {
             console.log(JSON.stringify(result, null, 2));
             weather_data = result;
         }
-        res.render('index', { title: "Home", weather: weather_data });
+        res.render('pages/index', { title: "Home", weather: weather_data });
     });
 });
 app.get('/other', async function (req, res) {
-    var data ={
-        url: req.url,
-        itemData: []
-    }
-    res.render('other', data)    
+    fetchUrl("https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian", function(error, meta, body){
+        try {
+            var meals_data = body.toString();
+            console.log(meals_data);
+        } catch (error) {
+            console.log(error)
+        }
+        res.render('pages/other', { title: "Random Meals", random: meals_data });    
+    });  
 });
 app.listen(8000);
