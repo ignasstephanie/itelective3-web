@@ -19,14 +19,19 @@ app.get('/', function (req, res) {
     });
 });
 app.get('/other', async function (req, res) {
-    fetchUrl("https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian", function(error, meta, body){
+    fetchUrl("https://www.themealdb.com/api/json/v1/1/random.php", function(error, meta, body){
         try {
-            var meals_data = body.toString();
-            console.log(meals_data);
-        } catch (error) {
-            console.log(error)
+            console.log(body.toString());
+            // var meals_data = body;
+            var meals_data = JSON.parse(body.toString());
+            // console.log();
+        } catch (err) {
+            console.log(err)
         }
-        res.render('pages/other', { title: "Random Meals", random: meals_data });    
+        var data = {
+            url: req.url
+        }
+        res.render('pages/other', { title: "Random Meals", data, random: meals_data });    
     });  
 });
 app.listen(8000);

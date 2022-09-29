@@ -3,27 +3,48 @@
 
     <%- include('../partials/header')  %> 
 
-<body>
-    <header>
-        <%- include('../partials/navigation')  %> 
-    </header>
+<body class="bg-white dark:bg-gray-800">
+    <%- include('../partials/navigation')  %> 
 
-    <div class="p-5">
-        <h3>About Us</h3>
+    <div class="flex items-center justify-center mt-32">
+        <a href="other" alt=""> <!-- Generate New Random Meal -->
+            <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 
+            focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-10 py-2.5 text-center">
+                Generate Random Meal
+            </button>
+        </a>
     </div>
-
-    <%= random %>
-    
-<a href="#" class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/docs/images/blog/image-4.jpg" alt="">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <!--Random Meal Card-->
+    <div class="flex flex-col m-auto bg-white rounded-lg border shadow-md md:flex-row md:max-w-7xl dark:bg-gray-800 dark:border-gray-700 mt-10 mb-32">
+        <img class="object-cover rounded-t-lg md:h-auto md:w-96 md:rounded-none md:rounded-l-lg" src="<%= random["meals"][0]["strMealThumb"] %>" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+            <p class="mb-1 italic text-teal-500 dark:text-gray-400"> 
+                <%= random["meals"][0]["strCategory"] %> <!--Meal Category-->
+            </p> 
+            <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> 
+                <%= random["meals"][0]["strMeal"] %> <!--Meal Name-->
+            </h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> 
+                <%= random["meals"][0]["strArea"] %> <!--Area-->
+            </p> 
+            <p class="font-bold text-gray-700 dark:text-gray-400"> Ingredients </p>
+                <ul class="mb-2 list-disc columns-2s gap-1 font-normal text-gray-700 dark:text-gray-400 ml-6">
+                    <% for(let i = 1; i <= 20; i++){ %> <!--Ingredients Loop-->
+                        <%  if(random["meals"][0]["strIngredient" + i] != "" && random["meals"][0]["strMeasure" + i] != "" && 
+                            random["meals"][0]["strIngredient" + i] != "null" && random["meals"][0]["strMeasure" + i] != "null"){ %> 
+                            <li> <%= random["meals"][0]["strMeasure" + i] + " " + random["meals"][0]["strIngredient" + i] %> </li> 
+                        <% } else { 
+                            break; 
+                        } %>
+                    <% } %>
+                </ul>
+            <p class="font-bold text-gray-700 dark:text-gray-400"> Instructions </p>
+            <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
+                <%= random["meals"][0]["strInstructions"] %> <!--Instructions-->
+            </p>
+        </div>
     </div>
-</a>
-
-    
     <%- include('../partials/footer')  %> 
 </body>
-    
+
 </html>
