@@ -8,21 +8,21 @@
         <%- include('../partials/navigation')  %> 
         
         <!-- Location, Longitude, and Latitude -->
-        <div class="flex items-center justify-center mt-24 bg-blue-100 rounded-lg w-2/5 m-auto text-center rounded-3xl py-12 mt-40 dark:bg-gray-700">
+        <div class="flex items-center justify-center mt-24 bg-blue-100 rounded-lg w-2/5 m-auto text-center rounded-3xl py-8 mt-40 dark:bg-gray-700">
             <div class="flex flex-col">
-                <img src="https://cdn-icons-png.flaticon.com/512/203/203027.png" class="sm:h-32 mr-5" alt="Country Flag" /> <!-- Location Flag -->
+                <img src="https://cdn-icons-png.flaticon.com/512/203/203027.png" class="sm:h-24 mr-5" alt="Country Flag" /> <!-- Location Flag -->
             </div>   
             <div class="flex flex-col px-4 text-sky-900 dark:text-gray-300">
-                <h3 class="text-4xl font-bold">
+                <h3 class="text-3xl font-bold">
                     <%= weather[0]["location"]["name"] %> <!-- Location -->
                 </h3>
-                <p class="text-3xl mt-2">
+                <p class="text-2xl mt-2">
                     <%= weather[0]["location"]["lat"] %>° N, <!-- Latitude -->
                     <%= weather[0]["location"]["long"] %>° E <!-- Longitude -->
                 </p>
             </div>
         </div>
-        <div class="flex items-center justify-center mx-auto mt-16 gap-20 dark:text-gray-200">
+        <div class="flex items-center justify-center mx-auto mt-12 gap-20 dark:text-gray-200 mb-28">
         <!-- Weather Forecast -->
             <% for(let i = 0; i <= 4; i++){ %> 
                 <!-- Weather Icon -->
@@ -53,7 +53,7 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/7774/7774380.png" alt="heavy-t-storms" />    
                     <% } %>
                     <!-- Day-Today Condition -->
-                    <div class="text-2xl font-bold text-center mt-3">
+                    <div class="text-xl font-bold text-center mt-2">
                         <% if(weather[0]["current"]["date"]  != weather[0].forecast[i].date ){ %> 
                             <%= weather[0].forecast[i].day %> <!-- Day -->
                         <% } %>
@@ -61,11 +61,11 @@
                             Today
                         <% } %>
                     </div>  
-                    <div class="text-2xl text-center mt-1"><%= weather[0].forecast[i].date %></div> <!-- Date -->
-                    <div class="text-2xl text-center mt-1"><%= weather[0].forecast[i].skycodeday %>° C</div> <!-- Temperature -->
-                    <div class="flex flex-row bg-slate-100 rounded-3xl justify-center gap-2 mt-1 px-5 py-1 dark:bg-slate-800">
-                        <div class="text-xl text-center"><%= weather[0].forecast[i].high %>° C</div> <!-- High -->
-                        <div class="text-xl text-center text-slate-600 dark:text-slate-500"><%= weather[0].forecast[i].low %>° C</div> <!-- Low -->
+                    <div class="text-xl text-center"><%= weather[0].forecast[i].date %></div> <!-- Date -->
+                    <div class="text-xl text-center"><%= weather[0].forecast[i].skycodeday %>° C</div> <!-- Temperature -->
+                    <div class="flex flex-row bg-slate-100 rounded-3xl justify-center gap-2 px-5 py-1 dark:bg-slate-800">
+                        <div class="text-lg text-center"><%= weather[0].forecast[i].high %>° C</div> <!-- High -->
+                        <div class="text-lg text-center text-slate-600 dark:text-slate-500"><%= weather[0].forecast[i].low %>° C</div> <!-- Low -->
                     </div>
                 </div>
             <% } %>   
@@ -78,8 +78,8 @@
 
 <style>
     .weathericon img{
-        width: 120px; 
-        height: 120px;
+        width: 100px; 
+        height: 100px;
         align-self: center; 
     }
 </style>
